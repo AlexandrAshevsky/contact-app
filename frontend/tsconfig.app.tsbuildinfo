@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/services/contactService.ts","./src/types/contact.ts","./src/utils/validation.ts","./src/App.vue","./src/components/ContactDialog.vue","./src/components/ContactList.vue"],"version":"5.9.3"}
