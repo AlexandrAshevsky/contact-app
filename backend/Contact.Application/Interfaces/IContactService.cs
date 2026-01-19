@@ -10,7 +10,7 @@ namespace Contact.Application.Interfaces
 
         public Task<int> Create(CreateContactRequest request);
 
-        public Task Update(UpdateContactRequest request);
+        public Task<int> Update(UpdateContactRequest request);
 
         public Task Delete(int id);
     }

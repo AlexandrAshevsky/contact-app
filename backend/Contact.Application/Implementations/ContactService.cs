@@ -63,9 +63,9 @@ namespace Contact.Application.Implementations
             })
             .FirstAsync(x => x.Id == id);
 
-        public async Task Update(UpdateContactRequest request)
+        public async Task<int> Update(UpdateContactRequest request)
         {
-            var entity = await _context.Contacts.FirstAsync(x => x.Id != request.Id);
+            var entity = await _context.Contacts.FirstAsync(x => x.Id == request.Id);
 
             entity.Name = request.Name;
             entity.MobilePhone = request.MobilePhone;
@@ -73,6 +73,8 @@ namespace Contact.Application.Implementations
             entity.BirthDate = request.BirthDate;
 
             await _context.SaveChangesAsync();
+
+            return entity.Id;
         }
     }
 }

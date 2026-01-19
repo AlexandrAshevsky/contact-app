@@ -28,12 +28,8 @@ namespace Contact.API.Controllers
             Ok(await _contactService.Create(request));
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] UpdateContactRequest request)
-        {
-            await _contactService.Update(request);
-
-            return Ok();
-        }
+        public async Task<IActionResult> Update([FromBody] UpdateContactRequest request) => 
+            Ok(await _contactService.Update(request));
 
         [HttpDelete]
         public async Task<IActionResult> Delete([FromQuery] int id)
